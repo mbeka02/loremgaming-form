@@ -25,7 +25,7 @@ const AddOn = () => {
       <h2 className="text-3xl font-bold text-marine-blue mb-2 ">
         Pick add-ons
       </h2>
-      <span className="text-cool-gray font-medium mt-2 mb-5">
+      <span className="text-cool-gray font-normal mt-2 mb-5">
         Add-ons help enhance your gaming experience.
       </span>
       <div className="grid gap-8 mt-4 ">
@@ -49,12 +49,12 @@ const AddOn = () => {
               </div>
 
               <div className="ml-2 lg:m-0 grid lg:gap-2">
-                <h3 className="text-lg font-semibold text-marine-blue">
+                <h3 className="text-lg font-bold text-marine-blue">
                   {el.service}
                 </h3>
-                <span className="text-cool-gray font-medium">{el.desc}</span>
+                <span className="text-cool-gray font-normal">{el.desc}</span>
               </div>
-              <span className="text-purplish-blue font-semibold  text-sm">
+              <span className="text-purplish-blue font-medium text-sm">
                 {el.price}
               </span>
             </div>
@@ -64,7 +64,7 @@ const AddOn = () => {
 
       <div className="flex  justify-between items-center mt-6">
         <button
-          className="text-cool-gray font-semibold text-sm border-none hover:text-marine-blue"
+          className="text-cool-gray font-bold text-sm border-none hover:text-marine-blue"
           onClick={navigateBack}
         >
           Go back

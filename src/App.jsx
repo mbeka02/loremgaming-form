@@ -10,7 +10,7 @@ import { FormProvider } from "./context/cardContext";
 function App() {
   return (
     <FormProvider>
-      <div className="text-black grid  grid-cols-1   font-ubuntu gap-10 bg-transparent rounded-md  w-full lg:grid-cols-custom  lg:gap-36 lg:bg-white lg:m-2 lg:p-4">
+      <div className="text-black grid  grid-cols-1    gap-10 bg-transparent rounded-md  w-full lg:grid-cols-custom  lg:gap-36 lg:bg-white lg:m-2 lg:p-4">
         <PageCard />
         <Routes>
           <Route path="/" element={<InfoForm />} />

@@ -17,4 +17,5 @@ body {
   display: grid;
   background-color: hsl(217, 100%, 97%);
   height: 100vh;
+  font-family: "Ubuntu", sans-serif;
 }

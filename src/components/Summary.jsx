@@ -74,14 +74,14 @@ export default function Summary() {
           <div className="text-cool-gray font-medium text-sm">
             Total(per month)
           </div>
-          <div className="text-purplish-blue text-xl font-semibold">
+          <div className="text-purplish-blue text-xl font-bold">
             +${total}/mo
           </div>
         </div>
       )}
       <div className="flex  justify-between items-center mt-6">
         <button
-          className="text-cool-gray font-semibold text-sm border-none hover:text-marine-blue"
+          className="text-cool-gray font-bold text-sm border-none hover:text-marine-blue"
           onClick={navigateBack}
         >
           Go back

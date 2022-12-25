@@ -71,14 +71,14 @@ const Plan = () => {
             >
               <img src={element.img} className=" w-14 h-14" />
               <div className="grid">
-                <h3 className="text-lg font-semibold text-marine-blue">
+                <h3 className="text-lg font-bold text-marine-blue">
                   {element.type}
                 </h3>
                 <span className="text-cool-gray font-medium">
                   {element.billing}
                 </span>
                 {!isMonthly && (
-                  <span className="font-semibold text-sm text-marine-blue mt-2">
+                  <span className="font-medium text-sm text-marine-blue mt-2">
                     {element.discount}
                   </span>
                 )}
@@ -90,7 +90,7 @@ const Plan = () => {
 
       <div className="flex gap-2 items-center justify-center mt-4 ">
         <span
-          className="font-semibold text-sm "
+          className="font-bold text-sm "
           style={{
             color: isMonthly ? " hsl(213, 96%, 18%)" : "hsl(231, 11%, 63%)",
           }}
@@ -103,7 +103,7 @@ const Plan = () => {
           barBackgroundColorActive="#032B5B"
         />
         <span
-          className="font-semibold text-sm "
+          className="font-bold text-sm "
           style={{
             color: isMonthly ? "hsl(231, 11%, 63%) " : " hsl(213, 96%, 18%)",
           }}
@@ -114,7 +114,7 @@ const Plan = () => {
 
       <div className="flex mt-3  justify-between items-center lg:mt-6">
         <button
-          className="text-cool-gray font-semibold text-sm border-none hover:text-marine-blue"
+          className="text-cool-gray font-bold text-sm border-none hover:text-marine-blue"
           onClick={navigateBack}
         >
           Go back
