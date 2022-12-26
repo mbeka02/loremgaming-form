@@ -9,6 +9,8 @@ export const FormContext = createContext();
 export const FormProvider = ({ children }) => {
   const [plan, setPlan] = useState("");
   const [addOns, setAddOns] = useState([]);
+  const [isConfirmed, setisConfirmed] = useState(false);
+  const [isMonthly, setIsMonthly] = useState(true);
 
   const [value, setValue] = useState(arr);
   //useEffect(() => console.log(value), [value]);
@@ -72,10 +74,27 @@ export const FormProvider = ({ children }) => {
   function handlePlans(plan) {
     setPlan(plan);
   }
+  const handleConfirmation = () => {
+    setisConfirmed((prev) => !prev);
+  };
+  const handleSub = () => {
+    setIsMonthly((prev) => !prev);
+  };
 
   return (
     <FormContext.Provider
-      value={{ value, handleToggle, plan, handlePlans, pages, setActive }}
+      value={{
+        value,
+        handleToggle,
+        plan,
+        handlePlans,
+        pages,
+        setActive,
+        isConfirmed,
+        handleConfirmation,
+        isMonthly,
+        handleSub,
+      }}
     >
       {children}
     </FormContext.Provider>
