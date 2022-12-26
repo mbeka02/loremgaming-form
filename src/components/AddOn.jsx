@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const AddOn = () => {
   // const [isToggled, setIsToggled] = useState(false);
-  const { value, handleToggle, setActive } = useValue();
+  const { value, handleToggle, setActive, isMonthly } = useValue();
   const navigate = useNavigate();
   const pageId = 3;
   useEffect(() => {
@@ -21,7 +21,7 @@ const AddOn = () => {
   const style1 = { borderColor: "hsl(243, 100%, 62%)" };
   const style2 = { backgroundColor: "hsla(243, 100%, 62%,0.1)" };
   return (
-    <div className="  mt-10 text-copy   absolute top-1/4 bg-white rounded-md self-center w-10/12 justify-self-center  h-fit  gap-3  p-6 lg:relative lg:top-1 lg:m-2  lg:ml-24">
+    <div className="  mt-10 text-copy   absolute top-1/4 bg-white rounded-md self-center w-10/12 justify-self-center  h-fit  gap-3  p-6 lg:p-1 lg:relative lg:top-1 lg:m-2  lg:ml-24">
       <h2 className="text-3xl font-bold text-marine-blue mb-2 ">
         Pick add-ons
       </h2>
@@ -55,7 +55,7 @@ const AddOn = () => {
                 <span className="text-cool-gray font-normal">{el.desc}</span>
               </div>
               <span className="text-purplish-blue font-medium text-sm">
-                {el.price}
+                {isMonthly ? el.Mprice : el.Yprice}
               </span>
             </div>
           );

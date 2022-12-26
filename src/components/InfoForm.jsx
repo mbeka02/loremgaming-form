@@ -54,7 +54,7 @@ export default function InfoForm() {
   const number = handleInput(null);
   return (
     <form
-      className="grid absolute top-1/3 bg-white rounded-md self-center w-10/12 justify-self-center  h-fit text-copy gap-3  p-6 lg:relative lg:top-1 lg:m-2 lg:gap-6 lg:p-2 lg:w-full"
+      className="grid absolute top-1/3 bg-white rounded-md self-center w-10/12 justify-self-center  h-fit text-copy gap-3  p-6 lg:relative lg:top-1 lg:m-2 lg:gap-6 lg:p-4 lg:w-full"
       //onSubmit={handleSubmit}
     >
       <div>
@@ -62,7 +62,7 @@ export default function InfoForm() {
           Personal info
         </h2>
         <span className="text-cool-gray font-medium mt-2 ">
-          Please provide your name,email address and phone number
+          Please provide your name,email address and phone number.
         </span>
       </div>
       <div className="flex justify-between">
@@ -75,7 +75,7 @@ export default function InfoForm() {
       </div>
       <input
         placeholder="e.g. Stephen King"
-        className="h-12 border-solid border-1 border-cool-gray rounded-lg p-4"
+        className="h-12 border-solid border-1 border-cool-gray rounded-lg p-4 text-marine-blue font-medium"
         {...Name}
         required
         style={{ borderColor: error ? "red" : "hsl(231, 11%, 63%)" }}
@@ -90,7 +90,7 @@ export default function InfoForm() {
       </div>
       <input
         placeholder="e.g. stephenking@lorem.com "
-        className=" h-12 border-solid border-1 border-cool-gray rounded-lg p-4"
+        className=" h-12 border-solid border-1 border-cool-gray rounded-lg p-4 text-marine-blue font-medium"
         {...email}
         required
         style={{ borderColor: error2 ? "red" : "hsl(231, 11%, 63%)" }}
@@ -106,7 +106,7 @@ export default function InfoForm() {
 
       <input
         placeholder="e.g. + 1 234 567 890"
-        className="h-12 border-solid border-1 border-cool-gray rounded-lg p-4"
+        className="h-12 border-solid border-1 border-cool-gray rounded-lg p-4 text-marine-blue font-medium"
         {...number}
         required
         style={{ borderColor: error3 ? "red" : "hsl(231, 11%, 63%)" }}

@@ -7,8 +7,8 @@ import { useNavigate } from "react-router-dom";
 import useValue from "../hooks/useValue";
 
 const Plan = () => {
-  const [isMonthly, setIsMonthly] = useState(true);
-  const { handlePlans, setActive, plan } = useValue();
+  //const [isMonthly, setIsMonthly] = useState(true);
+  const { handlePlans, setActive, plan, isMonthly, handleSub } = useValue();
   const navigate = useNavigate();
   const pageId = 2;
   useEffect(() => {
@@ -24,31 +24,37 @@ const Plan = () => {
     {
       img: Arcade,
       type: "Arcade",
-      billing: isMonthly ? "$9/mo" : "90/yr",
+      Mbilling: "$9/mo",
+      Ybilling: "90/yr",
       discount: "2 months free",
       id: 1,
-      price: 9,
+      Mprice: 9,
+      Yprice: 90,
     },
     {
       img: Advanced,
       type: "Advanced",
-      billing: isMonthly ? "$12/mo" : "120/yr",
+      Mbilling: "$12/mo",
+      Ybilling: "120/yr",
       discount: "2 months free",
       id: 2,
-      price: 12,
+      Mprice: 12,
+      Yprice: 120,
     },
     {
       img: Pro,
       type: "Pro",
-      billing: isMonthly ? "$15/mo" : "150/yr",
+      Mbilling: "$15/mo",
+      Ybilling: "150/yr",
       discount: "2 months free",
       id: 3,
-      price: 15,
+      Mprice: 15,
+      Yprice: 150,
     },
   ];
   const style1 = { borderColor: "hsl(243, 100%, 62%)" };
   const style2 = { backgroundColor: "hsla(243, 100%, 62%,0.1)" };
-  console.log(plan);
+  //console.log(plan);
 
   return (
     <div className=" mt-10 text-copy absolute top-1/4 bg-white rounded-md self-center w-10/12 justify-self-center  h-fit gap-3  p-6 lg:relative lg:top-1 lg:m-2 lg:gap-6 lg:p-2 lg:w-full">
@@ -75,7 +81,7 @@ const Plan = () => {
                   {element.type}
                 </h3>
                 <span className="text-cool-gray font-medium">
-                  {element.billing}
+                  {isMonthly ? element.Mbilling : element.Ybilling}
                 </span>
                 {!isMonthly && (
                   <span className="font-medium text-sm text-marine-blue mt-2">
@@ -98,7 +104,7 @@ const Plan = () => {
           Monthly
         </span>
         <ToggleSlider
-          onToggle={() => setIsMonthly((prev) => !prev)}
+          onToggle={handleSub}
           barBackgroundColor="#032B5B"
           barBackgroundColorActive="#032B5B"
         />
