@@ -1,11 +1,9 @@
-//import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 import useValue from "../hooks/useValue";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function InfoForm() {
-  //const navigate = useNavigate();
   const { setActive } = useValue();
   const [error, setError] = useState(false);
   const [error2, setError2] = useState(false);
@@ -23,13 +21,7 @@ export default function InfoForm() {
       onChange: (e) => setInput(e.target.value),
     };
   };
-  /* const handleSubmit = (e) => {
-    if (Name.input === null || "") {
-      e.preventDefault();
-      console.log(Name);
-    }
-    navigate("/plan");
-  };*/
+
   function handleClick(e) {
     if (Name.input === null) {
       e.preventDefault();
@@ -44,19 +36,12 @@ export default function InfoForm() {
       e.preventDefault();
       setError3(true);
     }
-    //navigate("/plan");
-
-    //navigate("/plan");
-    //console.log(Name);
   }
   const Name = handleInput(null);
   const email = handleInput(null);
   const number = handleInput(null);
   return (
-    <form
-      className="grid absolute top-1/3 bg-white rounded-md self-center w-10/12 justify-self-center  h-fit text-copy gap-3  p-6 lg:relative lg:top-1 lg:m-2 lg:gap-6 lg:p-4 lg:w-full"
-      //onSubmit={handleSubmit}
-    >
+    <form className="grid absolute top-1/3 bg-white rounded-md self-center w-10/12 justify-self-center  h-fit text-copy gap-3  p-6 lg:relative lg:top-1 lg:m-2 lg:gap-6 lg:p-4 lg:w-full">
       <div>
         <h2 className="text-2xl font-bold text-marine-blue mb-2 lg:text-3xl">
           Personal info

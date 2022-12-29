@@ -1,19 +1,21 @@
+//IMPORTS
 import Arcade from "../images/icon-arcade.svg";
 import { ToggleSlider } from "react-toggle-slider";
 import Advanced from "../images/icon-advanced.svg";
 import Pro from "../images/icon-pro.svg";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import useValue from "../hooks/useValue";
 
 const Plan = () => {
-  //const [isMonthly, setIsMonthly] = useState(true);
-  const { handlePlans, setActive, plan, isMonthly, handleSub } = useValue();
+  const { handlePlans, setActive, plan, isMonthly, handleSubscription } =
+    useValue();
   const navigate = useNavigate();
   const pageId = 2;
   useEffect(() => {
     setActive(pageId);
   }, []);
+  //Navigation
   function handleClick() {
     navigate("/addons");
   }
@@ -52,9 +54,9 @@ const Plan = () => {
       Yprice: 150,
     },
   ];
+  //Styling
   const style1 = { borderColor: "hsl(243, 100%, 62%)" };
   const style2 = { backgroundColor: "hsla(243, 100%, 62%,0.1)" };
-  //console.log(plan);
 
   return (
     <div className=" mt-10 text-copy absolute top-1/4 bg-white rounded-md self-center w-10/12 justify-self-center  h-fit gap-3  p-6 lg:relative lg:top-1 lg:m-2 lg:gap-6 lg:p-2 lg:w-full">
@@ -104,7 +106,7 @@ const Plan = () => {
           Monthly
         </span>
         <ToggleSlider
-          onToggle={handleSub}
+          onToggle={handleSubscription}
           barBackgroundColor="#032B5B"
           barBackgroundColorActive="#032B5B"
         />

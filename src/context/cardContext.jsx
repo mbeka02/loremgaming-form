@@ -1,19 +1,17 @@
+//IMPORTS
 import { createContext } from "react";
-import { useEffect } from "react";
 import { useState } from "react";
-
 import arr from "../data";
-
 export const FormContext = createContext();
 
 export const FormProvider = ({ children }) => {
+  //STATE
   const [plan, setPlan] = useState(null);
-  const [addOns, setAddOns] = useState([]);
   const [isConfirmed, setisConfirmed] = useState(false);
   const [isMonthly, setIsMonthly] = useState(true);
-
   const [value, setValue] = useState(arr);
-  //useEffect(() => console.log(value), [value]);
+
+  //INFO PAGE FOR THE PAGE CARD COMPONENT
   const pageInfo = [
     {
       step: "step 1",
@@ -45,6 +43,7 @@ export const FormProvider = ({ children }) => {
     },
   ];
   const [pages, setPages] = useState(pageInfo);
+  //SETS ACTIVE TAB
   function setActive(pageId) {
     setPages((el) =>
       el.map((x) => {
@@ -54,13 +53,11 @@ export const FormProvider = ({ children }) => {
       })
     );
   }
-
+  //Toggles isToggled property of selected  value from arr
   const handleToggle = (id) => {
     setValue((el) =>
       el.map((x) => (x.id === id ? { ...x, isToggled: !x.isToggled } : x))
     );
-
-    //console.log(id);
   };
 
   /* function handleAddOns() {
@@ -71,13 +68,17 @@ export const FormProvider = ({ children }) => {
     handleAddOns;
     console.log("Effect ran");
   }, [value]);*/
+
+  //Adds selected plan as state
   function handlePlans(plan) {
     setPlan(plan);
   }
+  //Confirms details on summary page
   const handleConfirmation = () => {
-    setisConfirmed((prev) => !prev);
+    setisConfirmed(true);
   };
-  const handleSub = () => {
+  //For the toggle slider (changes between monthly and yearly)
+  const handleSubscription = () => {
     setIsMonthly((prev) => !prev);
   };
 
@@ -93,7 +94,7 @@ export const FormProvider = ({ children }) => {
         isConfirmed,
         handleConfirmation,
         isMonthly,
-        handleSub,
+        handleSubscription,
       }}
     >
       {children}

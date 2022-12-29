@@ -1,17 +1,18 @@
+//IMPORTS
 import { useEffect } from "react";
 import useValue from "../hooks/useValue";
 import Check from "../images/icon-checkmark.svg";
 import { useNavigate } from "react-router-dom";
-//import { nanoid } from "nanoid";
 
 const AddOn = () => {
-  // const [isToggled, setIsToggled] = useState(false);
   const { value, handleToggle, setActive, isMonthly } = useValue();
   const navigate = useNavigate();
   const pageId = 3;
+  //Sets this as active tab on page render
   useEffect(() => {
     setActive(pageId);
   }, []);
+  //Navigation
   function handleClick() {
     navigate("/summary");
   }

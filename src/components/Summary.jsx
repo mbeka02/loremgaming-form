@@ -1,15 +1,17 @@
+//IMPORTS
 import useValue from "../hooks/useValue";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 import { useEffect } from "react";
 import Thankyou from "../images/icon-thank-you.svg";
-//import AddOn from "./AddOn";
+
 export default function Summary() {
   const { value, plan, setActive, isConfirmed, handleConfirmation, isMonthly } =
     useValue();
   const [total, setTotal] = useState(0);
   const navigate = useNavigate();
   const pageId = 4;
+  //Sets this as active tab on page render
   useEffect(() => {
     setActive(pageId);
   }, []);
@@ -20,6 +22,7 @@ export default function Summary() {
   function navigateBack() {
     navigate("/addons");
   }
+  //Refactoring
   const getTotal = () => {
     const filteredValues = value.filter((obj) => obj.isToggled === true);
     if (isMonthly) {
