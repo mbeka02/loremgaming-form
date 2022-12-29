@@ -23,17 +23,19 @@ export default function Summary() {
   const getTotal = () => {
     const filteredValues = value.filter((obj) => obj.isToggled === true);
     if (isMonthly) {
+      const intial = plan ? plan.Mprice : 0;
       setTotal(
         filteredValues.reduce(
           (accumulator, currentValue) => accumulator + currentValue.ppm,
-          plan.Mprice
+          intial
         )
       );
     } else {
+      const intial = plan ? plan.Mprice : 0;
       setTotal(
         filteredValues.reduce(
           (accumulator, currentValue) => accumulator + currentValue.ppy,
-          plan.Yprice
+          intial
         )
       );
     }
@@ -65,7 +67,7 @@ export default function Summary() {
           <div className="grid p-4 w-full bg-alabaster ">
             <div className="m-2 flex justify-between  pb-4  ">
               <div className=" grid font-bold text-marine-blue text-base ">
-                {plan.type} {isMonthly ? "(Monthly)" : "(Yearly)"}
+                {plan?.type} {isMonthly ? "(Monthly)" : "(Yearly)"}
                 <span
                   onClick={handleClick}
                   className="text-purplish-blue text-xs hover:underline underline-offset-2 decoration-1 decoration-purplish-blue cursor-pointer"
@@ -74,7 +76,7 @@ export default function Summary() {
                 </span>
               </div>
               <div className="font-bold text-marine-blue text-base">
-                {isMonthly ? plan.Mbilling : plan.Ybilling}
+                {isMonthly ? plan?.Mbilling : plan?.Ybilling}
               </div>
             </div>
             <hr />

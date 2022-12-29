@@ -7,7 +7,7 @@ import arr from "../data";
 export const FormContext = createContext();
 
 export const FormProvider = ({ children }) => {
-  const [plan, setPlan] = useState("");
+  const [plan, setPlan] = useState(null);
   const [addOns, setAddOns] = useState([]);
   const [isConfirmed, setisConfirmed] = useState(false);
   const [isMonthly, setIsMonthly] = useState(true);
